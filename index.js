@@ -11,7 +11,7 @@ const vaultToken = argv.t || argv.token || process.env.VAULT_TOKEN
 const force = argv.f || argv.force
 let scope = argv.s || argv.scope || ''
 
-if(scope) scope = `/${scope}`
+if (scope) scope = `/${scope}`
 
 async function getEnvString (vaultClient) {
   const secrets = await vaultClient.list(`secret${scope}`, {format: 'json'})
