@@ -1,6 +1,6 @@
 {
   "name": "vault-dotenv",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Creates a .env file from Vault secrets",
   "main": "index.js",
   "bin": "./index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beogip/vault-dotenv.git"
+    "url": "https://github.com/beogip/vault-dotenv.git"
   },
   "keywords": [
     "vault",
