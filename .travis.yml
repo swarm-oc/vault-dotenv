@@ -15,4 +15,4 @@ jobs:
   - stage: release
     if: branch = master AND type = push
     script: true
-    after_success: npm run semantic-release'
+    after_success: npm run semantic-release
