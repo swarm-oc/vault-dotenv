@@ -1,17 +1,20 @@
+#!/usr/bin/env node
+
 const argv = require('minimist')(process.argv.slice(2))
 const fs = require('fs')
 const vault = require('node-vault')
 const snakeCase = require('lodash.snakecase')
-const path = require('path')
-const appDir = path.dirname(require.main.filename)
+const appDir = process.cwd()
 
 const vaultAddress = argv.a || argv.address || process.env.VAULT_ADDR
 const vaultToken = argv.t || argv.token || process.env.VAULT_TOKEN
-const scope = argv.s || argv.scope || ''
 const force = argv.f || argv.force
+let scope = argv.s || argv.scope || ''
+
+if(scope) scope = `/${scope}`
 
 async function getEnvString (vaultClient) {
-  const secrets = await vaultClient.list('secret', {format: 'json'})
+  const secrets = await vaultClient.list(`secret${scope}`, {format: 'json'})
   const {keys} = secrets.data
   let output = ''
   for (let key of keys) {
