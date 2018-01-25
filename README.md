@@ -20,11 +20,11 @@ npm install -g vault-dotenv
 ## Usage
 Open a terminal and cd to a directory where you want to create the file
 
-```bash
+```
 vault-dotenv -a http://127.0.0.1:8200 -t <token>
 ```
 
-```bash
+```
 Usage: vault-dotenv [options]
 
 Options:
@@ -32,6 +32,8 @@ Options:
                                             given tries to get the address from
                                             the env var VAULT_ADDR.
                                             Default: http://127.0.0.1
-	-t TOKEN, -token TOKEN              Authentication token of Vault
+	-t TOKEN, -token TOKEN              Authentication token of Vault. if no address is
+                                            given tries to get the address from
+                                            the env var VAULT_TOKEN.
 	-f, -force                          Override the current .env file
 ```
