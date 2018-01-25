@@ -1,0 +1,18 @@
+language: node_js
+sudo: required
+node_js:
+- '8'
+notifications:
+  email: false
+stages: test release
+env:
+- BUILD_LEADER_ID=2
+jobs:
+  include:
+  - stage: test
+    install: npm i
+    script: npm test
+  - stage: release
+    if: branch = master AND type = push
+    script: true
+    after_success: npm run semantic-release'
