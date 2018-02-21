@@ -10,11 +10,12 @@
   <a href="https://www.npmjs.com/package/vault-dotenv">
     <img alt="npm latest version" src="https://img.shields.io/npm/v/vault-dotenv/latest.svg">
   </a>
+  <a href="https://greenkeeper.io/">
+    <img alt="npm latest version" src="https://badges.greenkeeper.io/beogip/vault-dotenv.svg">
+  </a>
 </p>
 
 ## Install
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/beogip/vault-dotenv.svg)](https://greenkeeper.io/)
 ```bash
 npm install -g vault-dotenv
 ```
