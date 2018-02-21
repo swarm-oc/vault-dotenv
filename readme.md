@@ -13,6 +13,8 @@
 </p>
 
 ## Install
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/beogip/vault-dotenv.svg)](https://greenkeeper.io/)
 ```bash
 npm install -g vault-dotenv
 ```
