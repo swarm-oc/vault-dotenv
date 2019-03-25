@@ -1,6 +1,9 @@
 <h1 align="center" style="border-bottom: none;">vault-dotenv</h1>
 <h3 align="center">Creates a .env file from vault secrets</h3>
 <p align="center">
+  <a href="https://www.codacy.com/app/swarm-oc/vault-dotenv?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=swarm-oc/vault-dotenv&amp;utm_campaign=Badge_Grade">
+    <img alt="Travis" src="https://api.codacy.com/project/badge/Grade/98589ef370624f1fbca8bebb5435f7e1">
+  </a>
   <a href="https://travis-ci.org/beogip/vault-dotenv">
     <img alt="Travis" src="https://img.shields.io/travis/beogip/vault-dotenv/master.svg">
   </a>
