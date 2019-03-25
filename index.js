@@ -14,12 +14,12 @@ let scope = argv.s || argv.scope || ''
 if (scope) scope = `/${scope}`
 
 async function getEnvString (vaultClient) {
-  const secrets = await vaultClient.list(`secret${scope}`, {format: 'json'})
-  const {keys} = secrets.data
+  const secrets = await vaultClient.list(`secret${scope}`, { format: 'json' })
+  const { keys } = secrets.data
   let output = ''
   for (let key of keys) {
     const read = await vaultClient.read(`secret${scope}/${key}`)
-    const {value} = read.data
+    const { value } = read.data
     output += `${snakeCase(key).toUpperCase()}=${value}\n`
   }
 
