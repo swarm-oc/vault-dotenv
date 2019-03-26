@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "MaanuVazquez",
+      "name": "Emmanuel Vazquez",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12692648?v=4",
+      "profile": "https://github.com/MaanuVazquez",
+      "contributions": [
+        "maintenance",
+        "review",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "vault-dotenv",
+  "projectOwner": "swarm-oc",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
