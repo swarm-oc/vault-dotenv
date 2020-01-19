@@ -34,6 +34,7 @@ Options:
                                             given tries to get the address from
                                             the env var VAULT_TOKEN.
 	-f, --force                          Override the current .env file
+  --kvv2                               Uses key-value 2 vault api
 ```
 
 ## Contributors

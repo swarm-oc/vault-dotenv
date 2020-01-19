@@ -9,21 +9,34 @@ const appDir = process.cwd()
 const vaultAddress = argv.a || argv.address || process.env.VAULT_ADDR
 const vaultToken = argv.t || argv.token || process.env.VAULT_TOKEN
 const force = argv.f || argv.force
+const kvv2 = argv.kvv2 || false
 let scope = argv.s || argv.scope || ''
 
 if (scope) scope = `/${scope}`
 
 async function getEnvString (vaultClient) {
-  const secrets = await vaultClient.list(`secret${scope}`, { format: 'json' })
-  const { keys } = secrets.data
-  let output = ''
-  for (let key of keys) {
-    const read = await vaultClient.read(`secret${scope}/${key}`)
-    const { value } = read.data
-    output += `${snakeCase(key).toUpperCase()}=${value}\n`
-  }
+  if (kvv2) {
+    const secrets = await vaultClient.list(`secret/metadata${scope}`, { format: 'json' })
+    const { keys } = secrets.data
+    let output = ''
+    for (let key of keys) {
+      const { data: response } = await vaultClient.read(`secret/data/${scope}/${key}`)
+      const values = response.data
+      output += Object.keys(values).map(key => `${snakeCase(key).toUpperCase()}=${values[key]}\n`).join('')
+    }
+    return output
+  } else {
+    const secrets = await vaultClient.list(`secret${scope}`, { format: 'json' })
+    const { keys } = secrets.data
+    let output = ''
+    for (let key of keys) {
+      const read = await vaultClient.read(`secret${scope}/${key}`)
+      const { value } = read.data
+      output += `${snakeCase(key).toUpperCase()}=${value}\n`
+    }
 
-  return output
+    return output
+  }
 }
 
 function generateDotEnv (output) {
